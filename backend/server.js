@@ -10,7 +10,11 @@ dotenv.config();
 
 const app = express();
 
-app.use(cors());
+app.use(
+  cors({
+    origin: "https://your-vercel-project.vercel.app",
+  })
+);
 app.use(express.json());
 
 app.use("/api/blogs", blogRoutes);
